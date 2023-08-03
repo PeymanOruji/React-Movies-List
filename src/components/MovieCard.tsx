@@ -1,8 +1,8 @@
+import dayjs from "dayjs";
+import classnames from 'classnames';
 import {MovieType} from "../Movies.types";
 import Button from "./kit/Button";
 import truncate from "./utils/truncate";
-import classnames from 'classnames';
-import dayjs from "dayjs";
 import classes from './MovieCard.module.scss';
 
 export default function MovieCard({action, movie}: { action: Function, movie: MovieType }) {
