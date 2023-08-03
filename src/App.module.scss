@@ -1,53 +1,55 @@
 .App {
-  text-align: center;
-  position: relative;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+nav {
+  display: flex;
+  background-color: #282c34;
+  position: fixed;
+  top: 0;
+  justify-content: center;
+  width: 100%;
+  z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-x: auto;
+
   }
-  to {
-    transform: rotate(360deg);
+  .leftMovieContainer,
+  .rightMovieContainer {
+    display: flex;
+    gap: 2rem;
+    max-height: calc(100vh - 110px);
+    overflow-x: auto;
   }
 }
 
-#add-button { position: absolute; top: 0; right: 0; }
+@media screen and (min-width: 600px) {
+  .container {
+    margin-top: 100px;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+  }
 
-#remove-button { position: absolute; top: 0; right: 0; }
-
-#left-movie-container { position: absolute; border: 2px solid black; width: 400px; left: 0; }
-
-#right-movie-container { position: absolute; border: 2px solid black; width: 400px; right: 0; }
-
-#movie { position: relative; background-color: #64c86420; }
-
-#movie-title { font-weight: 500; font-size: large; }
-
-#right-movie-container #movie { background-color: #c8646420; }
+  .leftMovieContainer,
+  .rightMovieContainer {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: calc(100vh - 110px);
+  }
+}
