@@ -21,8 +21,9 @@ export default function MovieCard({action, movie}: { action: Function, movie: Mo
             <p className={classes.overview}>
                 {truncate(movie.overview, 120)}
             </p>
-            <div className={classnames(classes.actionContainer,!movie.selected?classes.addButton:classes.removeButton)}>
-                <Button action={action} text={movie.selected ? "Remove" : "Add"}/>
+            <div className={classnames(classes.actionContainer)}>
+                <Button name={movie.title} action={action} mood={movie.selected ? 'secondary' : 'primary'}
+                        text={movie.selected ? "Remove" : "Add"}/>
             </div>
         </div>
     </div>
